@@ -3,12 +3,12 @@ kibot:
   version: 1
 
 outputs:
-  - name: 'print_top_bot_png'
-    comment: "Print Top and Bottom layers in PNG"
+  - name: 'print_top_bot_svg'
+    comment: "Print Top and Bottom layers in SVG"
     type: pcb_print
     dir: pcb_print/svg
     options:
-      format: 'PNG'
+      format: 'SVG'
       pages:
         - sheet: Front
           layers:
@@ -22,7 +22,8 @@ outputs:
               plot_footprint_refs: false
               plot_footprint_values: false
             - layer: Dwgs.User
-        - layers:
+        - sheet: Bottom
+          layers:
             - layer: B.Fab
             - layer: Edge.Cuts
             - layer: B.SilkS
@@ -31,11 +32,3 @@ outputs:
             - layer: B.Mask
               color: '#14332480'
             - layer: Dwgs.User
-
-  - name: 'print_top_bot_svg'
-    comment: "Print Top and Bottom layers in SVG"
-    type: pcb_print
-    dir: pcb_print/svg
-    extends: 'print_top_bot_png'
-    options:
-      format: 'SVG'
