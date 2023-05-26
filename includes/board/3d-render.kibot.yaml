@@ -7,11 +7,11 @@ outputs:
     type: render_3d
     dir: 3D-Models
     options:
-      - view: "top"
+      view: "top"
       
   - name: "3d_render - bottom"
     comment: "IMAGE - 3D-rendered image of the assembled board"
     type: render_3d
     dir: 3D-Models
     options:
-      - view: "bottom"
+      view: "bottom"
