@@ -1,0 +1,19 @@
+# This script calls all the scripts for testing purposes
+kibot:
+  version: 1
+
+global:
+  # Sets the default output filename for all generated files. You likely don't have to change this.
+  output: "%f-%i.%x"
+
+# This imports the KiBot scripts that actuall do all the generation. If you want to
+# generate different things/more things then change these to point to other .kibot.yaml files.
+import:
+  - includes/schematic/print-pdf.kibot.yaml
+  - includes/schematic/bom-csv.kibot.yaml
+  - includes/board/3d-render.kibot.yaml
+  - includes/board/ibom.kibot.yaml
+  - includes/board/print_copper_png_2_layer.kibot.yaml
+  - includes/board/print_copper_svg.kibot.yaml
+  - includes/board/print_top_bot.kibot.yaml
+  # - includes/board/step.kibot.yaml  # Skip if not needed, resource intensive 
