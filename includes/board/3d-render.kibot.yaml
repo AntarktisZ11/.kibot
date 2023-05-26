@@ -54,6 +54,6 @@ outputs:
     type: render_3d
     dir: 3D-Models
     options:
-      view: "top"
+      view: "bottom"
       rotate_x: 5
       rotate_z: 32
