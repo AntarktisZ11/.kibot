@@ -5,7 +5,7 @@ outputs:
   - name: "standard_bom"
     comment: "Standard csv BOM for upload to Octopart or similar"
     type: bom
-    dir: Schematic
+    dir: BoM
     options:
       blacklist: "DNF*"
       csv:

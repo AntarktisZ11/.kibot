@@ -6,5 +6,4 @@ outputs:
   - name: "svg"
     comment: "SVG plotted"
     type: svg
-    dir: print_zones/svg
     layers: copper

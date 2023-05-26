@@ -6,7 +6,6 @@ outputs:
   - name: "print_top_bot_pdf"
     comment: "Print Top and Bottom layers in PDF"
     type: pcb_print
-    dir: pcb_print/pdf
     options:
       format: "PDF"
       pages:
