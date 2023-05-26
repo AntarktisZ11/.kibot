@@ -1,0 +1,41 @@
+# Print the top and bottom layers
+kibot:
+  version: 1
+
+outputs:
+  - name: 'print_top_bot_png'
+    comment: "Print Top and Bottom layers in PNG"
+    type: pcb_print
+    dir: pcb_print/svg
+    options:
+      format: 'PNG'
+      pages:
+        - sheet: Front
+          layers:
+            - layer: Edge.Cuts
+            - layer: F.Cu
+            - layer: F.Mask
+              color: '#14332440'
+            - layer: F.Paste
+            - layer: F.SilkS
+            - layer: F.Fab
+              plot_footprint_refs: false
+              plot_footprint_values: false
+            - layer: Dwgs.User
+        - layers:
+            - layer: B.Fab
+            - layer: Edge.Cuts
+            - layer: B.SilkS
+            - layer: B.Paste
+            - layer: B.Cu
+            - layer: B.Mask
+              color: '#14332480'
+            - layer: Dwgs.User
+
+  - name: 'print_top_bot_svg'
+    comment: "Print Top and Bottom layers in SVG"
+    type: pcb_print
+    dir: pcb_print/svg
+    extends: 'print_top_bot_png'
+    options:
+      format: 'SVG'
