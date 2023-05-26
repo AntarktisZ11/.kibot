@@ -3,13 +3,6 @@ kibot:
   version: 1
 
 outputs:
-#   - name: 'PDF Joiner'
-#     comment: 'Join the top and bottom sheets into one PDF'
-#     type: pdfunite
-#     options:
-#       outputs:
-#         - from_output: print_top_bot_pdf
-
   - name: 'print_top_bot_pdf'
     comment: "Print Top and Bottom layers in PDF"
     type: pcb_print
