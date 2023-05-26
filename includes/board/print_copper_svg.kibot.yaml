@@ -3,7 +3,7 @@ kibot:
   version: 1
 
 outputs:
-  - name: 'svg'
+  - name: "svg"
     comment: "SVG plotted"
     type: svg
     dir: print_zones/svg
