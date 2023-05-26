@@ -2,16 +2,58 @@ kibot:
   version: 1
 
 outputs:
+  #
+  # Render of the top side with multiple angles
+  #
   - name: "3d_render - top"
     comment: "IMAGE - 3D-rendered image of the assembled board"
     type: render_3d
     dir: 3D-Models
     options:
       view: "top"
+
+  - name: "3d_render - top, left lean"
+    comment: "IMAGE - 3D-rendered image of the assembled board"
+    type: render_3d
+    dir: 3D-Models
+    options:
+      view: "top"
+      rotate_x: 5
+      rotate_z: 4
+
+  - name: "3d_render - top, rotated, left lean"
+    comment: "IMAGE - 3D-rendered image of the assembled board"
+    type: render_3d
+    dir: 3D-Models
+    options:
+      view: "top"
+      rotate_x: 5
+      rotate_z: 32
       
+  #
+  # Render of the bottom side with multiple angles
+  #
   - name: "3d_render - bottom"
     comment: "IMAGE - 3D-rendered image of the assembled board"
     type: render_3d
     dir: 3D-Models
     options:
       view: "bottom"
+
+  - name: "3d_render - bottom, left lean"
+    comment: "IMAGE - 3D-rendered image of the assembled board"
+    type: render_3d
+    dir: 3D-Models
+    options:
+      view: "bottom"
+      rotate_x: 5
+      rotate_z: 4
+
+  - name: "3d_render - bottom, rotated, left lean"
+    comment: "IMAGE - 3D-rendered image of the assembled board"
+    type: render_3d
+    dir: 3D-Models
+    options:
+      view: "top"
+      rotate_x: 5
+      rotate_z: 32
