@@ -11,6 +11,12 @@ outputs:
     dir: 3D-Models
     options:
       view: "top"
+      # Output description, needed to differentiate file output 
+      # %f = File name
+      # %i = '3D_$VIEW'
+      # %I = '$OUTPUT_ID' (To differentiate variations of this output)
+      # %x = 'png'
+      output: '%f-%i%I.%x'
 
   - name: "3d_render - top, left lean"
     comment: "IMAGE - 3D-rendered image of the assembled board"
@@ -18,9 +24,13 @@ outputs:
     dir: 3D-Models
     options:
       view: "top"
+      # Each rotation step is 10 degrees, positive is clockwise
       rotate_x: 5
       rotate_z: 4
+      output: '%f-%i_%I.%x'
+    output_id: "left_lean"
 
+  # Same lean as previous but from the other side (180 degree Z rotation)
   - name: "3d_render - top, rotated, left lean"
     comment: "IMAGE - 3D-rendered image of the assembled board"
     type: render_3d
@@ -29,7 +39,9 @@ outputs:
       view: "top"
       rotate_x: 5
       rotate_z: 22
-      
+      output: '%f-%i_%I.%x'
+    output_id: "rotated_left_lean"
+
   #
   # Render of the bottom side with multiple angles
   #
@@ -48,6 +60,8 @@ outputs:
       view: "bottom"
       rotate_x: 5
       rotate_z: 4
+      output: '%f-%i_%I.%x'
+    output_id: "left_lean"
 
   - name: "3d_render - bottom, rotated, left lean"
     comment: "IMAGE - 3D-rendered image of the assembled board"
@@ -57,3 +71,5 @@ outputs:
       view: "bottom"
       rotate_x: 5
       rotate_z: 22
+      output: '%f-%i_%I.%x'
+    output_id: "rotated_left_lean"
