@@ -1,0 +1,21 @@
+# This script is called when a PCB release is being made
+kibot:
+  version: 1
+
+global:
+  # Sets the default output filename for all generated files. You likely don't have to change this.
+  output: "%f-%i.%x"
+
+# This imports the KiBot scripts that actually do all the generation. If you want to
+# generate different things/more things then change these to point to other .kibot.yaml files.
+import:
+# Schematic outputs
+  - includes/schematic/print-pdf.kibot.yaml
+  - includes/schematic/bom-csv.kibot.yaml
+
+# Board outputs
+  - includes/board/3d-render.kibot.yaml
+  - includes/board/ibom.kibot.yaml
+  - includes/board/print_copper_svg.kibot.yaml
+  - includes/board/print_top_bot.kibot.yaml
+  - includes/board/step.kibot.yaml
