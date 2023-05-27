@@ -2,6 +2,21 @@
 kibot:
   version: 1
 
+preflight:
+  run_erc: true # (Electrical Rules Check)
+
+  # Check if the PCB and Schematic are synchronized
+  update_xml:
+    check_pcb_parity: true
+
+  # Check if copper zones are filled
+  check_zone_fills: true
+
+  # Require all routing to be finished
+  ignore_unconnected: false
+
+  run_drc: true # (Distance Rules Check)
+
 global:
   # Sets the default output filename for all generated files. You likely don't have to change this.
   output: "%f-%i.%x"
@@ -9,11 +24,11 @@ global:
 # This imports the KiBot scripts that actually do all the generation. If you want to
 # generate different things/more things then change these to point to other .kibot.yaml files.
 import:
-# Schematic outputs
+  # Schematic outputs
   - includes/schematic/print-pdf.kibot.yaml
   - includes/schematic/bom-csv.kibot.yaml
 
-# Board outputs
+  # Board outputs
   - includes/board/3d-render.kibot.yaml
   - includes/board/ibom.kibot.yaml
   - includes/board/print_copper_svg.kibot.yaml
