@@ -8,4 +8,4 @@ outputs:
     type: navigate_results
     dir: navigate_results
     options:
-      link_from_root: "Navigate_Results"
+      link_from_root: "Navigate_Results.html"
