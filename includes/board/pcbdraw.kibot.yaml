@@ -1,0 +1,14 @@
+# Beautiful 2D PCB render, without components
+kibot:
+  version: 1
+
+outputs:
+  - name: "pcbdraw- Top"
+    comment: "2D PCB render"
+    type: pcbdraw
+
+  - name: "pcbdraw - Bottom"
+    comment: "2D PCB render"
+    type: pcbdraw
+    options:
+      bottom: true

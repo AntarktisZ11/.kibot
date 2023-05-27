@@ -13,6 +13,7 @@ import:
   - includes/schematic/bom-csv.kibot.yaml
 
   - includes/board/3d-render.kibot.yaml
+  - includes/board/pcbdraw.kibot.yaml
   - includes/board/ibom.kibot.yaml
   - includes/board/print_copper_svg.kibot.yaml
   - includes/board/print_top_bot.kibot.yaml
