@@ -6,3 +6,6 @@ outputs:
   - name: "Navigate_Results"
     comment: "Generate a web page to navigate the generated outputs"
     type: navigate_results
+    dir: navigate_results
+    options:
+      link_from_root: "Navigate_Results"
