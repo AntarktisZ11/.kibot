@@ -21,5 +21,5 @@ global:
 # This imports the KiBot scripts that actually do all the generation. If you want to
 # generate different things/more things then change these to point to other .kibot.yaml files.
 import:
-  - includes/board/3d-render.kibot.yaml
+  - includes/board/pcbdraw.kibot.yaml
   - includes/board/ibom.kibot.yaml
