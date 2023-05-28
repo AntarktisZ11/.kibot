@@ -2,6 +2,17 @@
 # whenever board has been changed.
 kibot:
   version: 1
+  
+preflight:
+  # Check if the PCB and Schematic are synchronized
+  update_xml:
+    check_pcb_parity: true
+
+  # Check if copper zones are filled
+  check_zone_fills: true
+
+  # DON'T require all routing to be finished
+  ignore_unconnected: true
 
 global:
   # Sets the default output filename for all generated files. You likely don't have to change this.
