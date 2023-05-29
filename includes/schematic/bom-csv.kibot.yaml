@@ -7,14 +7,16 @@ outputs:
     type: bom
     dir: BoM
     options:
-      blacklist: "DNF*"
+      ignore_dnf: true # Exclude DNF (Do Not Fit) components
       csv:
         hide_pcb_info: true
         hide_stats_info: true
         quote_all: true
       columns:
         - Part
-        - field: manf
-          name: Manufacturer
+        - Value
+        - Footprint
         - References
         - Quantity Per PCB
+        - Farnell Nr
+        - Datasheet
