@@ -3,6 +3,15 @@
 kibot:
   version: 1
 
+preflight:
+  set_text_variables:
+    # Use short git hash as revision ID
+    - name: "REV"
+      command: 'git log -1 --format="%h" $KIBOT_SCH_NAME'
+      before: "Git:"
+    - name: "DATE"
+      command: "date +%Y-%m-%d"
+
 global:
   # Sets the default output filename for all generated files. You likely don't have to change this.
   output: "%f-%i.%x"
