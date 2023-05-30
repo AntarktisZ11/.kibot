@@ -2,6 +2,6 @@ kibot:
   version: 1
 
 outputs:
-  - name: "print_sch"
+  - name: "print_sch_pdf"
     comment: "PDF - print schematic"
     type: pdf_sch_print

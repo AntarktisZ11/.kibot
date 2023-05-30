@@ -1,0 +1,7 @@
+kibot:
+  version: 1
+
+outputs:
+  - name: "print_sch_svg"
+    comment: "SVG - print schematic"
+    type: svg_sch_print

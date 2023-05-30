@@ -11,4 +11,5 @@ global:
 # generate different things/more things then change these to point to other .kibot.yaml files.
 import:
   - includes/schematic/print-pdf.kibot.yaml
+  - includes/schematic/print-svg.kibot.yaml # Useful for GitHub SVG diff viewer
   - includes/schematic/bom-csv.kibot.yaml

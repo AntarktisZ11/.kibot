@@ -10,6 +10,7 @@ global:
 # generate different things/more things then change these to point to other .kibot.yaml files.
 import:
   - includes/schematic/print-pdf.kibot.yaml
+  - includes/schematic/print-svg.kibot.yaml
   - includes/schematic/bom-csv.kibot.yaml
 
   - includes/board/3d-render.kibot.yaml
