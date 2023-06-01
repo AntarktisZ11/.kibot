@@ -7,10 +7,10 @@ preflight:
   set_text_variables:
     # Use short git hash as revision ID
     - name: "REV"
-      command: 'git log -1 --format="%h" "$KIBOT_SCH_NAME"'
+      command: git log -1 --format="%h" "$KIBOT_SCH_NAME"
       before: "Git:"
     - name: "DATE"
-      command: 'git log -1 --format="%as" -- "$KIBOT_SCH_NAME"'
+      command: git log -1 --format="%as" -- "$KIBOT_SCH_NAME"
     - name: "SCH_FILE"
       command: echo $KIBOT_SCH_NAME
 
