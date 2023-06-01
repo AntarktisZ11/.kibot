@@ -7,7 +7,7 @@ preflight:
   set_text_variables:
     # Use short git hash as revision ID
     - name: "REV"
-      command: 'git log -1 --format="%h" $KIBOT_SCH_NAME'
+      command: 'git log -1 --format="%h" "$KIBOT_SCH_NAME"'
       before: "Git:"
     - name: "DATE"
       command: "date +%Y-%m-%d"
