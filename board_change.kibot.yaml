@@ -2,11 +2,14 @@
 # whenever board has been changed.
 kibot:
   version: 1
-  
+
 preflight:
-  # Check if the PCB and Schematic are synchronized
+  # Check if the PCB and Schematic are synchronized.
+  # Currently does not support 'Exclude from board',
+  # therefore only warning
   update_xml:
     check_pcb_parity: true
+    as_warnings: true
 
   # Check if copper zones are filled
   check_zone_fills: true
