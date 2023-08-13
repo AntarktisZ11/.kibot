@@ -2,6 +2,31 @@
 kibot:
   version: 1
 
+preflight:
+  # Check if the PCB and Schematic are synchronized.
+  # Currently does not support 'Exclude from board'
+  # Therefore only warning
+  update_xml:
+    check_pcb_parity: true
+    as_warnings: true
+
+  # Check if copper zones are filled
+  check_zone_fills: true
+
+  set_text_variables:
+    # Use short git hash as revision ID
+    - name: "SCH_REV"
+      command: git log -1 --format="%h" "$KIBOT_SCH_NAME"
+      before: "Git:"
+    - name: "SCH_DATE"
+      command: git log -1 --format="%as" -- "$KIBOT_SCH_NAME"
+
+    - name: "PCB_REV"
+      command: git log -1 --format="%h" "$KIBOT_PCB_NAME"
+      before: "Git:"
+    - name: "PCB_DATE"
+      command: git log -1 --format="%as" -- "$KIBOT_PCB_NAME"
+
 global:
   # Sets the default output filename for all generated files. You likely don't have to change this.
   output: "%f-%i.%x"
