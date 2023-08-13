@@ -17,6 +17,14 @@ preflight:
   # DON'T require all routing to be finished
   ignore_unconnected: true
 
+  set_text_variables:
+    # Use short git hash as revision ID
+    - name: "PCB_REV"
+      command: git log -1 --format="%h" "$KIBOT_PCB_NAME"
+      before: "Git:"
+    - name: "PCB_DATE"
+      command: git log -1 --format="%as" -- "$KIBOT_PCB_NAME"
+
 global:
   # Sets the default output filename for all generated files. You likely don't have to change this.
   output: "%f-%i.%x"
