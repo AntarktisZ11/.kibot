@@ -6,10 +6,10 @@ kibot:
 preflight:
   set_text_variables:
     # Use short git hash as revision ID
-    - name: "REV"
+    - name: "SCH_REV"
       command: git log -1 --format="%h" "$KIBOT_SCH_NAME"
       before: "Git:"
-    - name: "DATE"
+    - name: "SCH_DATE"
       command: git log -1 --format="%as" -- "$KIBOT_SCH_NAME"
 
 global:
