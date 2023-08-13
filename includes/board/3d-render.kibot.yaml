@@ -17,6 +17,7 @@ outputs:
       # %I = '$OUTPUT_ID' (To differentiate variations of this output)
       # %x = 'png'
       output: "%f-%i%I.%x"
+      ray_tracing: true
 
   - name: "3d_render - top, left lean"
     comment: "IMAGE - 3D-rendered image of the assembled board"
@@ -28,6 +29,7 @@ outputs:
       rotate_x: 5
       rotate_z: 4
       output: "%f-%i_%I.%x"
+      ray_tracing: true
     output_id: "left_lean"
 
   # Same lean as previous but from the other side (180 degree Z rotation)
@@ -40,6 +42,7 @@ outputs:
       rotate_x: 5
       rotate_z: 22
       output: "%f-%i_%I.%x"
+      ray_tracing: true
     output_id: "rotated_left_lean"
 
   #
@@ -51,6 +54,7 @@ outputs:
     dir: 3D-Render
     options:
       view: "bottom"
+      ray_tracing: true
 
   - name: "3d_render - bottom, left lean"
     comment: "IMAGE - 3D-rendered image of the assembled board"
@@ -61,6 +65,7 @@ outputs:
       rotate_x: 5
       rotate_z: 4
       output: "%f-%i_%I.%x"
+      ray_tracing: true
     output_id: "left_lean"
 
   - name: "3d_render - bottom, rotated, left lean"
@@ -72,4 +77,5 @@ outputs:
       rotate_x: 5
       rotate_z: 22
       output: "%f-%i_%I.%x"
+      ray_tracing: true
     output_id: "rotated_left_lean"
