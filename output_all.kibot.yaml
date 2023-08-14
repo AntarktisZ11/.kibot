@@ -43,6 +43,6 @@ import:
   - includes/board/ibom.kibot.yaml
   - includes/board/print_copper_svg.kibot.yaml
   - includes/board/print_top_bot.kibot.yaml
-  # - includes/board/step.kibot.yaml  # Skip if not needed, resource intensive
+  - includes/board/step.kibot.yaml  # Skip if not needed, resource intensive
 
   - includes/navigate_results.kibot.yaml
