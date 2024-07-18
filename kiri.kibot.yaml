@@ -1,0 +1,17 @@
+kibot:
+  version: 1
+
+global:
+  # Sets the default output filename for all generated files. You likely don't have to change this.
+  output: "%f-%i.%x"
+
+outputs:
+  - name: 'kiri'
+    comment: "Test for KiRI interface"
+    type: kiri
+    dir: KiRI
+    # layers: ['F.Cu', 'In1.Cu', 'F.SilkS']
+    # layers: all
+    # options:
+      # branch: 3b3741c
+      # max_commits: 10

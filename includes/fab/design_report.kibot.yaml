@@ -1,0 +1,16 @@
+kibot:
+  version: 1
+
+# global:
+#   solder_mask_color_top: blue
+#   solder_mask_color_bottom: red
+#   pcb_finish: ENIG
+#   copper_thickness: "35"
+
+outputs:
+  - name: 'report_full'
+    comment: "Full design report"
+    type: report
+    dir: Fabrication
+    options:
+      do_convert: true

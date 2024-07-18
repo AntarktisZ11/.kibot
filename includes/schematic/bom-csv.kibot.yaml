@@ -5,18 +5,17 @@ outputs:
   - name: "standard_bom"
     comment: "Standard csv BOM for upload to Octopart or similar"
     type: bom
-    dir: BoM
     options:
+      normalize_values: true
       ignore_dnf: true # Exclude DNF (Do Not Fit) components
-      csv:
-        hide_pcb_info: true
-        hide_stats_info: true
-        quote_all: true
+      # csv:
+      #   hide_pcb_info: true
+      #   hide_stats_info: true
+      #   quote_all: true
       columns:
         - Part
         - Value
         - Footprint
         - References
         - Quantity Per PCB
-        - Farnell Nr
-        - Datasheet
+        # - Datasheet

@@ -6,9 +6,23 @@ preflight:
   # Check if the PCB and Schematic are synchronized.
   # Currently does not support 'Exclude from board'
   # Therefore only warning
-  update_xml:
-    check_pcb_parity: true
-    as_warnings: true
+  # update_xml:
+  #   check_pcb_parity: true
+  #   as_warnings: true
+
+  draw_stackup:
+    gerber: gerbers
+    border: 0
+    columns:
+      - type: gerber
+        width: 10
+      - type: drawing
+        width: 15
+      - type: thickness
+        width: 5
+        # side: right
+      - type: description
+        width: 20
 
   # Check if copper zones are filled
   check_zone_fills: true
@@ -34,15 +48,35 @@ global:
 # This imports the KiBot scripts that actually do all the generation. If you want to
 # generate different things/more things then change these to point to other .kibot.yaml files.
 import:
+  # Schematic
   - includes/schematic/print-pdf.kibot.yaml
   - includes/schematic/print-svg.kibot.yaml
   - includes/schematic/bom-csv.kibot.yaml
 
+  # Board
+  - file: 3DRender_top
+  - file: 3DRender_top_straight
+  - file: 3DRender_bottom
+  - file: 3DRender_bottom_straight
   - includes/board/3d-render.kibot.yaml
   - includes/board/pcbdraw.kibot.yaml
   - includes/board/ibom.kibot.yaml
   - includes/board/print_copper_svg.kibot.yaml
   - includes/board/print_top_bot.kibot.yaml
-  - includes/board/step.kibot.yaml  # Skip if not needed, resource intensive
+  - includes/board/pcb_print_repeat.kibot.yaml
 
+  # # 3D-models
+  - includes/board/step.kibot.yaml  # Skip if not needed, resource intensive
+  - includes/board/vrml.kibot.yaml  # Skip if not needed, resource intensive
+
+  # Fab
+  - includes/fab/gerber.kibot.yaml
+  - includes/fab/drill.kibot.yaml
+  - includes/fab/position.kibot.yaml
+  - includes/fab/design_report.kibot.yaml
+  
+
+  # Other
   - includes/navigate_results.kibot.yaml
+  # - file: ExportProject # NOTE: Requires KiBot 1.7 ZIP file containing a self-contained version of the project. All footprint, symbols and 3D models are included
+

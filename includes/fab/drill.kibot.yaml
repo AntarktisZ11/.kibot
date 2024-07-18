@@ -1,0 +1,12 @@
+kibot:
+  version: 1
+
+outputs:
+  - name: drill
+    comment: Drill files
+    type: excellon
+    dir: Fabrication/Gerber
+    options:
+      map:
+        type: pdf
+      pth_and_npth_single_file: true

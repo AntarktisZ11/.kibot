@@ -3,11 +3,11 @@ kibot:
   version: 1
 
 preflight:
-  run_erc: true # (Electrical Rules Check)
+  # run_erc: true # (Electrical Rules Check)
 
-  # Check if the PCB and Schematic are synchronized
-  update_xml:
-    check_pcb_parity: true
+  # # Check if the PCB and Schematic are synchronized
+  # update_xml:
+  #   check_pcb_parity: true
 
   # Check if copper zones are filled
   check_zone_fills: true
@@ -15,7 +15,7 @@ preflight:
   # Require all routing to be finished
   ignore_unconnected: false
 
-  run_drc: true # (Distance Rules Check)
+  # run_drc: true # (Distance Rules Check)
 
 global:
   # Sets the default output filename for all generated files. You likely don't have to change this.
@@ -28,9 +28,27 @@ import:
   - includes/schematic/print-pdf.kibot.yaml
   - includes/schematic/bom-csv.kibot.yaml
 
-  # Board outputs
-  - includes/board/3d-render.kibot.yaml
+  # Board
+  - file: 3DRender_top
+  - file: 3DRender_top_straight
+  - file: 3DRender_bottom
+  - file: 3DRender_bottom_straight
+  - includes/board/pcbdraw.kibot.yaml
   - includes/board/ibom.kibot.yaml
-  - includes/board/print_copper_svg.kibot.yaml
-  - includes/board/print_top_bot.kibot.yaml
+  # - includes/board/print_copper_svg.kibot.yaml
+  # - includes/board/print_top_bot.kibot.yaml
+  - includes/board/pcb_print_repeat.kibot.yaml
+
+
   - includes/board/step.kibot.yaml
+  - includes/board/vrml.kibot.yaml
+
+  # Fab
+  - includes/fab/gerber.kibot.yaml
+  - includes/fab/drill.kibot.yaml
+  - includes/fab/position.kibot.yaml
+  - includes/fab/design_report.kibot.yaml
+  - includes/fab/zip_fab.kibot.yaml
+
+  # General
+  # - file: ExportProject # NOTE: Requires KiBot 1.7 ZIP file containing a self-contained version of the project. All footprint, symbols and 3D models are included

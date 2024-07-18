@@ -1,0 +1,44 @@
+kibot:
+  version: 1
+
+outputs:
+  - name: 'print_all_layers'
+    comment: "Print all relevant layers"
+    type: pcb_print
+    options:
+      format: 'PDF'
+      pages:
+        - scaling: 2.0
+          sheet: '%ld'
+          repeat_for_layer: 'F.Cu'
+          repeat_layers: outers
+          layers:
+            - layer: Edge.Cuts
+            - layer: F.Cu
+            - layer: F.Mask
+              color: '#14332440'
+            - layer: F.Paste
+            - layer: F.SilkS
+            - layer: F.Fab
+              plot_footprint_refs: false
+              plot_footprint_values: false
+            - layer: Dwgs.User
+
+        - scaling: 2.0
+          sheet: '%ld'
+          repeat_for_layer: 'F.Cu'
+          repeat_layers: inners
+          layers:
+            - layer: Edge.Cuts
+            - layer: F.Cu
+            - layer: F.SilkS
+            - layer: Dwgs.User
+
+        - scaling: 2.0
+          sheet: '%ld'
+          repeat_for_layer: 'F.Cu'
+          repeat_layers: technical
+          layers:
+            - layer: Edge.Cuts
+            - layer: F.Cu
+            - layer: Dwgs.User

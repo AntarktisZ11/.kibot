@@ -1,0 +1,8 @@
+kibot:
+  version: 1
+
+outputs:
+  - name: "vrml_file_of_board"
+    comment: "VRML - 3D model (WRL file) of the assembled board intended for rendering."
+    type: vrml
+    dir: 3D-Models

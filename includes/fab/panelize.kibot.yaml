@@ -1,0 +1,13 @@
+kibot:
+  version: 1
+
+outputs:
+  - name: Panel
+    comment: "Create a panel from configuration file"
+    type: panelize
+    dir: Panel
+    options:
+      title: '+ (Panel)'
+      units: mm
+      create_preview: true
+      configs: "panelize.kikit.json"

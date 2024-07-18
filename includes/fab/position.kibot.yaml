@@ -1,0 +1,11 @@
+kibot:
+  version: 1
+
+outputs:
+  - name: position
+    comment: Pick & Place
+    type: position
+    dir: Fabrication
+    options:
+      format: CSV
+      separate_files_for_front_and_back: false

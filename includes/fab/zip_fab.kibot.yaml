@@ -1,0 +1,14 @@
+kibot:
+  version: 1
+
+outputs:
+  - name: Gerbers
+    comment: ZIP Drill and Gerber files
+    type: compress
+    dir: Fabrication
+    options:
+      files:
+        - from_output: gerber
+          dest: /
+        - from_output: drill
+          dest: /
